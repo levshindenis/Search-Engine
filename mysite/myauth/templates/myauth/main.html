@@ -1,0 +1,20 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  Главная страница
+{% endblock %}
+
+{% block body %}
+    <h1>Главная страница пользователя: {{ user.username }}</h1>
+    <form action="{% url 'myauth:calculator' %}">
+        <button type="submit">Калькулятор</button>
+    </form>
+    <form action="{% url 'myauth:profile' %}">
+        <button type="submit">Профиль</button>
+    </form>
+
+    <form action="{% url 'myauth:logout' %}">
+        <button type="submit">Выход</button>
+    </form>
+
+{% endblock %}
