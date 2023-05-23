@@ -9,10 +9,11 @@
     <form action="{% url 'myauth:calculator' %}">
         <button type="submit">Калькулятор</button>
     </form>
-    <form action="{% url 'myauth:profile' %}">
+    <p></p>
+    <form action="{% url 'myauth:profile' pk=user.profile.pk %}">
         <button type="submit">Профиль</button>
     </form>
-
+    <p></p>
     <form action="{% url 'myauth:logout' %}">
         <button type="submit">Выход</button>
     </form>
