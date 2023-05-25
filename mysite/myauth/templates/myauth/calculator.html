@@ -1,14 +1,24 @@
 {% extends 'myauth/base.html' %}
+{% load static %}
 
 {% block title %}
   Калькулятор
 {% endblock %}
 
 {% block body %}
+{% csrf_token %}
     <h1>Калькулятор</h1>
     <form action="{% url 'myauth:main' %}">
-        <button type="submit">Главная страница</button>
+        <button type="submit" >Главная страница</button>
     </form>
+    <p></p>
 
-{% endblock %}    def get_object(self, queryset=None):
-        return self.request.user
+    <a href="{% url 'myauth:downlad_pdf' %}"><button class="btn btn-primary" type="button">Скачать pdf файл</button></a>
+
+
+    <p></p>
+
+    <a href="{% url 'myauth:download_excel' %}"><button class="btn btn-primary" type="button">Скачать excel файл</button></a>
+
+{% endblock %}
+

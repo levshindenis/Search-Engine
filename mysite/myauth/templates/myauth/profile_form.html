@@ -7,7 +7,6 @@
 {% block body %}
     <h1>Профиль</h1>
 
-
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -17,4 +16,5 @@
     <form action="{% url 'myauth:profile' pk=user.profile.pk %}">
         <button type="submit">Вернуться в профиль</button>
     </form>
+
 {% endblock %}
